@@ -100,11 +100,38 @@
     fadeEls.forEach(function (el) {
       fadeObserver.observe(el);
     });
+
+    // Also observe hero annotations separately for initial load
+    var heroAnnotations = document.querySelector('.hero__annotations');
+    if (heroAnnotations) {
+      // Trigger hero labels after a short delay for cinematic feel
+      setTimeout(function () {
+        var heroLabels = heroAnnotations.querySelectorAll('.overlay-label--fade');
+        heroLabels.forEach(function (label) {
+          label.style.opacity = '1';
+          label.style.transform = 'translateY(0)';
+        });
+      }, 800);
+    }
   } else {
     // Fallback: show everything immediately
     fadeEls.forEach(function (el) {
       el.classList.add('visible');
     });
+  }
+
+  // ---- Subtle Parallax on Hero ----
+  var heroImg = document.querySelector('.hero__bg-img');
+  if (heroImg) {
+    // Parallax handled inside existing RAF-throttled scroll handler
+    var origHandleScroll = handleHeaderScroll;
+    handleHeaderScroll = function () {
+      origHandleScroll();
+      var scrollY = window.scrollY;
+      if (scrollY < window.innerHeight) {
+        heroImg.style.transform = 'scale(1.05) translateY(' + (scrollY * 0.15) + 'px)';
+      }
+    };
   }
 
   // ---- Init ----
