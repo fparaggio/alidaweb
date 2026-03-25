@@ -123,12 +123,15 @@
   // ---- Subtle Parallax on Hero ----
   var heroImg = document.querySelector('.hero__bg-img');
   if (heroImg) {
-    window.addEventListener('scroll', function () {
+    // Parallax handled inside existing RAF-throttled scroll handler
+    var origHandleScroll = handleHeaderScroll;
+    handleHeaderScroll = function () {
+      origHandleScroll();
       var scrollY = window.scrollY;
       if (scrollY < window.innerHeight) {
         heroImg.style.transform = 'scale(1.05) translateY(' + (scrollY * 0.15) + 'px)';
       }
-    });
+    };
   }
 
   // ---- Init ----
