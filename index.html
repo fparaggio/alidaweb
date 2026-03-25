@@ -47,17 +47,42 @@
 
     <!-- ====== 1. HERO — FIELD IMAGE BACKGROUND ====== -->
     <section class="hero" id="hero">
+      <!-- Real field deployment image as background -->
       <div class="hero__image-bg">
-        <img src="assets/images/field-deploy.svg" alt="ALIDA laser system deployed in the field observing a wind turbine" class="hero__bg-img">
+        <img src="https://github.com/user-attachments/assets/7a264eea-b147-4f44-913a-c27f8577204a"
+             alt="ALIDA laser system deployed in the field observing a wind turbine at distance"
+             class="hero__bg-img">
         <div class="hero__image-overlay"></div>
       </div>
       <div class="hero__grid-bg"></div>
 
       <!-- Palantir-style overlay annotations -->
       <div class="hero__annotations" aria-hidden="true">
-        <span class="annotation annotation--tl">[ Distance: ~200m ]</span>
-        <span class="annotation annotation--tr">[ Rotor tracking active ]</span>
-        <span class="annotation annotation--br">[ Non-intrusive measurement ]</span>
+        <div class="overlay-label overlay-label--fade" style="top:18%;left:4%">
+          <span class="overlay-label__marker"></span>
+          <span class="overlay-label__text">Distance: ~200m</span>
+        </div>
+        <div class="overlay-label overlay-label--fade" style="top:18%;right:4%">
+          <span class="overlay-label__marker"></span>
+          <span class="overlay-label__text">Rotor tracking active</span>
+        </div>
+        <div class="overlay-label overlay-label--fade" style="bottom:22%;left:4%">
+          <span class="overlay-label__marker"></span>
+          <span class="overlay-label__text">Non-intrusive measurement</span>
+        </div>
+        <div class="overlay-label overlay-label--fade" style="bottom:22%;right:4%">
+          <span class="overlay-label__marker"></span>
+          <span class="overlay-label__text">Field-deployed system</span>
+        </div>
+        <!-- Crosshair SVG overlay -->
+        <svg class="hero__crosshair" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+          <circle cx="100" cy="100" r="60" stroke="rgba(0,212,255,0.15)" stroke-width="1"/>
+          <circle cx="100" cy="100" r="30" stroke="rgba(0,212,255,0.1)" stroke-width="1"/>
+          <line x1="100" y1="30" x2="100" y2="70" stroke="rgba(0,212,255,0.2)" stroke-width="1"/>
+          <line x1="100" y1="130" x2="100" y2="170" stroke="rgba(0,212,255,0.2)" stroke-width="1"/>
+          <line x1="30" y1="100" x2="70" y2="100" stroke="rgba(0,212,255,0.2)" stroke-width="1"/>
+          <line x1="130" y1="100" x2="170" y2="100" stroke="rgba(0,212,255,0.2)" stroke-width="1"/>
+        </svg>
       </div>
 
       <div class="hero__content container">
@@ -215,7 +240,7 @@
       </div>
     </section>
 
-    <!-- ====== 5. USE CASE — ROTOR IMAGE ====== -->
+    <!-- ====== 5. USE CASE — ROTOR TRACKING IMAGE ====== -->
     <section class="section" id="usecase">
       <div class="container">
         <div class="section__header fade-in">
@@ -223,22 +248,46 @@
           <p class="section__copy--caption">Geometry reconstruction and phase estimation from real rotor motion</p>
         </div>
 
-        <div class="image-showcase fade-in">
-          <div class="image-showcase__frame">
-            <img src="assets/images/rotor-ellipse.svg" alt="Rotor ellipse tracking and geometry reconstruction showing blade tip positions and phase angles" class="image-showcase__img">
-            <!-- Overlay annotations -->
-            <span class="annotation annotation--img" style="top:12%;left:48%">[ Rotor axis ]</span>
-            <span class="annotation annotation--img" style="top:30%;right:8%">[ Phase angle ]</span>
-            <span class="annotation annotation--img" style="bottom:25%;left:8%">[ Ellipse fit ]</span>
-            <span class="annotation annotation--img" style="bottom:10%;right:12%">[ Blade tip tracking ]</span>
+        <!-- IMAGE OVERLAY: Rotor tracking analysis -->
+        <div class="img-overlay fade-in">
+          <div class="img-overlay__frame">
+            <img src="https://github.com/user-attachments/assets/b0ad9d4c-a17d-494d-822e-7f616067fa1c"
+                 alt="Rotor ellipse tracking and geometry reconstruction showing blade tip positions and phase angles"
+                 class="img-overlay__img"
+                 loading="lazy">
+            <!-- Scanline effect -->
+            <div class="img-overlay__scanline"></div>
+            <!-- Positioned overlay labels with connecting lines -->
+            <div class="overlay-label overlay-label--fade" style="top:8%;left:5%">
+              <span class="overlay-label__marker"></span>
+              <span class="overlay-label__text">Rotor axis</span>
+            </div>
+            <div class="overlay-label overlay-label--fade" style="top:8%;right:5%">
+              <span class="overlay-label__marker"></span>
+              <span class="overlay-label__text">Phase angle</span>
+            </div>
+            <div class="overlay-label overlay-label--fade" style="bottom:12%;left:5%">
+              <span class="overlay-label__marker"></span>
+              <span class="overlay-label__text">Ellipse fit</span>
+            </div>
+            <div class="overlay-label overlay-label--fade" style="bottom:12%;right:5%">
+              <span class="overlay-label__marker"></span>
+              <span class="overlay-label__text">Blade tip tracking</span>
+            </div>
+            <!-- Corner brackets -->
+            <svg class="img-overlay__corners" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+              <polyline points="0,8 0,0 8,0" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
+              <polyline points="92,0 100,0 100,8" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
+              <polyline points="0,92 0,100 8,100" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
+              <polyline points="92,100 100,100 100,92" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
+            </svg>
           </div>
+          <p class="img-overlay__caption">Used to confirm rotor imbalance and support targeted decisions.</p>
         </div>
-
-        <p class="section__closing fade-in">Used to confirm rotor imbalance and support targeted decisions.</p>
       </div>
     </section>
 
-    <!-- ====== 6. PROOF — CHART IMAGE ====== -->
+    <!-- ====== 6. PROOF — BLADE DATA IMAGE ====== -->
     <section class="section section--alt" id="proof">
       <div class="container">
         <div class="section__header fade-in">
@@ -246,21 +295,89 @@
           <p class="section__copy--caption">Blade-level signal extraction enabling structural validation</p>
         </div>
 
-        <div class="image-showcase fade-in">
-          <div class="image-showcase__frame">
-            <img src="assets/images/blade-timing.svg" alt="Blade timing signal chart showing per-blade signal extraction for structural validation" class="image-showcase__img">
-            <!-- Overlay annotations -->
-            <span class="annotation annotation--img" style="top:10%;left:5%">[ Blade A / B / C ]</span>
-            <span class="annotation annotation--img" style="top:10%;right:5%">[ Signal extraction ]</span>
-            <span class="annotation annotation--img" style="bottom:8%;right:5%">[ Timing consistency ]</span>
+        <!-- IMAGE OVERLAY: Blade passage data -->
+        <div class="img-overlay fade-in">
+          <div class="img-overlay__frame">
+            <img src="https://github.com/user-attachments/assets/541dcac7-c98b-4ea5-9f9b-4f0176fe04b7"
+                 alt="Blade passage timing chart showing per-blade signal extraction with enumeration pattern and passage duration distribution"
+                 class="img-overlay__img"
+                 loading="lazy">
+            <div class="img-overlay__scanline"></div>
+            <!-- Positioned overlay labels -->
+            <div class="overlay-label overlay-label--fade" style="top:6%;left:3%">
+              <span class="overlay-label__marker"></span>
+              <span class="overlay-label__text">Blade #1 / #2 / #3</span>
+            </div>
+            <div class="overlay-label overlay-label--fade" style="top:6%;right:3%">
+              <span class="overlay-label__marker"></span>
+              <span class="overlay-label__text">Signal extraction</span>
+            </div>
+            <div class="overlay-label overlay-label--fade" style="bottom:6%;left:3%">
+              <span class="overlay-label__marker"></span>
+              <span class="overlay-label__text">Passage duration: N=118</span>
+            </div>
+            <div class="overlay-label overlay-label--fade" style="bottom:6%;right:3%">
+              <span class="overlay-label__marker"></span>
+              <span class="overlay-label__text">Timing consistency</span>
+            </div>
+            <svg class="img-overlay__corners" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+              <polyline points="0,8 0,0 8,0" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
+              <polyline points="92,0 100,0 100,8" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
+              <polyline points="0,92 0,100 8,100" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
+              <polyline points="92,100 100,100 100,92" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
+            </svg>
           </div>
-          <div class="image-showcase__badge">Real data — not simulation</div>
+          <div class="img-overlay__badge">Real data — not simulation</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== FIELD SETUP — EVIDENCE IMAGE ====== -->
+    <section class="section" id="field-evidence">
+      <div class="container">
+        <div class="section__header fade-in">
+          <h2 class="section__title">Deployed in the field</h2>
+          <p class="section__copy--caption">Real measurement setup — operating turbine, no shutdown</p>
+        </div>
+
+        <!-- IMAGE OVERLAY: Field setup -->
+        <div class="img-overlay fade-in">
+          <div class="img-overlay__frame">
+            <img src="https://github.com/user-attachments/assets/f884e979-3821-487f-b4fa-f24a52499832"
+                 alt="ALIDA field measurement setup with laser system deployed near operating wind turbine"
+                 class="img-overlay__img"
+                 loading="lazy">
+            <div class="img-overlay__scanline"></div>
+            <div class="overlay-label overlay-label--fade" style="top:8%;left:5%">
+              <span class="overlay-label__marker"></span>
+              <span class="overlay-label__text">Measurement position</span>
+            </div>
+            <div class="overlay-label overlay-label--fade" style="top:8%;right:5%">
+              <span class="overlay-label__marker"></span>
+              <span class="overlay-label__text">Operating turbine</span>
+            </div>
+            <div class="overlay-label overlay-label--fade" style="bottom:10%;left:5%">
+              <span class="overlay-label__marker"></span>
+              <span class="overlay-label__text">Non-contact sensing</span>
+            </div>
+            <div class="overlay-label overlay-label--fade" style="bottom:10%;right:5%">
+              <span class="overlay-label__marker"></span>
+              <span class="overlay-label__text">No turbine access required</span>
+            </div>
+            <svg class="img-overlay__corners" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+              <polyline points="0,8 0,0 8,0" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
+              <polyline points="92,0 100,0 100,8" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
+              <polyline points="0,92 0,100 8,100" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
+              <polyline points="92,100 100,100 100,92" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
+            </svg>
+          </div>
+          <p class="img-overlay__caption">Laser system deployed at ground level — no scaffold, no drone, no shutdown.</p>
         </div>
       </div>
     </section>
 
     <!-- ====== 7. BUSINESS IMPACT ====== -->
-    <section class="section" id="impact">
+    <section class="section section--alt" id="impact">
       <div class="container">
         <div class="section__header fade-in">
           <h2 class="section__title">Why it matters</h2>
@@ -306,7 +423,7 @@
     </section>
 
     <!-- ====== 8. DEPLOYMENT ====== -->
-    <section class="section section--alt" id="deploy">
+    <section class="section" id="deploy">
       <div class="container">
         <div class="section__header fade-in">
           <h2 class="section__title">Designed for real-world integration</h2>
@@ -335,7 +452,7 @@
     </section>
 
     <!-- ====== 9. WHEN ALIDA IS USED ====== -->
-    <section class="section" id="when-used">
+    <section class="section section--alt" id="when-used">
       <div class="container">
         <div class="section__header fade-in">
           <h2 class="section__title">When ALIDA is used</h2>
@@ -375,7 +492,7 @@
     </section>
 
     <!-- ====== 10. SYSTEM PIPELINE ====== -->
-    <section class="section section--alt" id="pipeline">
+    <section class="section" id="pipeline">
       <div class="container">
         <div class="section__header fade-in">
           <h2 class="section__title">System pipeline</h2>
@@ -405,7 +522,7 @@
     </section>
 
     <!-- ====== 11. POSITIONING ====== -->
-    <section class="section" id="positioning">
+    <section class="section section--alt" id="positioning">
       <div class="container">
         <div class="positioning-content fade-in">
           <h2 class="section__title">Not another monitoring system</h2>
@@ -416,7 +533,7 @@
     </section>
 
     <!-- ====== 12. CREDIBILITY ====== -->
-    <section class="section section--alt" id="credibility">
+    <section class="section" id="credibility">
       <div class="container">
         <div class="section__header fade-in">
           <h2 class="section__title">Built in industrial context</h2>
@@ -427,7 +544,7 @@
     </section>
 
     <!-- ====== 13. TEAM ====== -->
-    <section class="section" id="team">
+    <section class="section section--alt" id="team">
       <div class="container">
         <div class="section__header fade-in">
           <h2 class="section__title">Team</h2>
