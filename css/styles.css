@@ -340,6 +340,7 @@ h3 { font-size: clamp(1.125rem, 2vw, 1.5rem); }
   position: absolute;
   inset: 0;
   z-index: 0;
+  overflow: hidden;
 }
 
 .hero__bg-img {
@@ -393,9 +394,9 @@ h3 { font-size: clamp(1.125rem, 2vw, 1.5rem); }
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 200px;
-  height: 200px;
-  opacity: 0.4;
+  width: 120px;
+  height: 120px;
+  opacity: 0.3;
   animation: crosshairPulse 4s ease-in-out infinite;
 }
 
