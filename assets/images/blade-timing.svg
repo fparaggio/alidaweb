@@ -1,0 +1,192 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
+  <defs>
+    <linearGradient id="chartBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a0a0f"/>
+      <stop offset="100%" stop-color="#0c1018"/>
+    </linearGradient>
+    <filter id="traceGlow">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="chartClip">
+      <rect x="80" y="30" width="690" height="310"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="400" fill="url(#chartBg)"/>
+
+  <!-- Chart area border -->
+  <rect x="80" y="30" width="690" height="310" fill="none" stroke="#1a2a3a" stroke-width="1"/>
+
+  <!-- Grid lines -->
+  <g opacity="0.1" stroke="#00d4ff" stroke-width="0.5">
+    <!-- Horizontal grid -->
+    <line x1="80" y1="75" x2="770" y2="75"/>
+    <line x1="80" y1="120" x2="770" y2="120"/>
+    <line x1="80" y1="165" x2="770" y2="165"/>
+    <line x1="80" y1="210" x2="770" y2="210"/>
+    <line x1="80" y1="255" x2="770" y2="255"/>
+    <line x1="80" y1="300" x2="770" y2="300"/>
+    <!-- Vertical grid -->
+    <line x1="149" y1="30" x2="149" y2="340"/>
+    <line x1="218" y1="30" x2="218" y2="340"/>
+    <line x1="287" y1="30" x2="287" y2="340"/>
+    <line x1="356" y1="30" x2="356" y2="340"/>
+    <line x1="425" y1="30" x2="425" y2="340"/>
+    <line x1="494" y1="30" x2="494" y2="340"/>
+    <line x1="563" y1="30" x2="563" y2="340"/>
+    <line x1="632" y1="30" x2="632" y2="340"/>
+    <line x1="701" y1="30" x2="701" y2="340"/>
+  </g>
+
+  <!-- Stronger grid at major divisions -->
+  <g opacity="0.18" stroke="#00d4ff" stroke-width="0.5">
+    <line x1="80" y1="185" x2="770" y2="185"/>
+    <line x1="425" y1="30" x2="425" y2="340"/>
+  </g>
+
+  <!-- Y-axis labels -->
+  <g fill="#00d4ff" font-family="monospace" font-size="9" opacity="0.5" text-anchor="end">
+    <text x="75" y="37">1.0</text>
+    <text x="75" y="78">0.8</text>
+    <text x="75" y="123">0.5</text>
+    <text x="75" y="168">0.3</text>
+    <text x="75" y="213">0.0</text>
+    <text x="75" y="258">-0.3</text>
+    <text x="75" y="303">-0.5</text>
+    <text x="75" y="343">-1.0</text>
+  </g>
+
+  <!-- Y-axis title -->
+  <text x="15" y="200" fill="#00d4ff" font-family="monospace" font-size="10" opacity="0.6" text-anchor="middle" transform="rotate(-90, 15, 200)">Amplitude [norm.]</text>
+
+  <!-- X-axis labels -->
+  <g fill="#00d4ff" font-family="monospace" font-size="9" opacity="0.5" text-anchor="middle">
+    <text x="80" y="358">0</text>
+    <text x="149" y="358">0.5</text>
+    <text x="218" y="358">1.0</text>
+    <text x="287" y="358">1.5</text>
+    <text x="356" y="358">2.0</text>
+    <text x="425" y="358">2.5</text>
+    <text x="494" y="358">3.0</text>
+    <text x="563" y="358">3.5</text>
+    <text x="632" y="358">4.0</text>
+    <text x="701" y="358">4.5</text>
+    <text x="770" y="358">5.0</text>
+  </g>
+
+  <!-- X-axis title -->
+  <text x="425" y="380" fill="#00d4ff" font-family="monospace" font-size="10" opacity="0.6" text-anchor="middle">Time [s]</text>
+
+  <!-- X-axis tick marks -->
+  <g stroke="#00d4ff" stroke-width="0.5" opacity="0.3">
+    <line x1="80" y1="340" x2="80" y2="345"/>
+    <line x1="149" y1="340" x2="149" y2="345"/>
+    <line x1="218" y1="340" x2="218" y2="345"/>
+    <line x1="287" y1="340" x2="287" y2="345"/>
+    <line x1="356" y1="340" x2="356" y2="345"/>
+    <line x1="425" y1="340" x2="425" y2="345"/>
+    <line x1="494" y1="340" x2="494" y2="345"/>
+    <line x1="563" y1="340" x2="563" y2="345"/>
+    <line x1="632" y1="340" x2="632" y2="345"/>
+    <line x1="701" y1="340" x2="701" y2="345"/>
+    <line x1="770" y1="340" x2="770" y2="345"/>
+  </g>
+
+  <!-- Signal traces clipped to chart area -->
+  <g clip-path="url(#chartClip)" filter="url(#traceGlow)">
+
+    <!-- Blade A signal - Cyan (#00d4ff) -->
+    <!-- ~3 full cycles across 690px => period ~230px, blade passage signal -->
+    <polyline fill="none" stroke="#00d4ff" stroke-width="1.5" opacity="0.9"
+      points="
+        80,185 86,175 92,158 98,130 104,100 110,72 115,55 120,50 125,55 130,72
+        136,100 142,130 148,158 154,175 160,185 166,192 172,200 178,205 184,208 190,210
+        196,208 202,205 208,200 214,192 220,185 226,175 232,158 238,130 244,100 250,72
+        255,55 260,50 265,55 270,72 276,100 282,130 288,158 294,175 300,185 306,192
+        312,200 318,205 324,208 330,210 336,208 342,205 348,200 354,192 360,185 366,175
+        372,158 378,130 384,100 390,72 395,55 400,50 405,55 410,72 416,100 422,130
+        428,158 434,175 440,185 446,192 452,200 458,205 464,208 470,210 476,208 482,205
+        488,200 494,192 500,185 506,175 512,158 518,130 524,100 530,72 535,55 540,50
+        545,55 550,72 556,100 562,130 568,158 574,175 580,185 586,192 592,200 598,205
+        604,208 610,210 616,208 622,205 628,200 634,192 640,185 646,175 652,158 658,130
+        664,100 670,72 675,55 680,50 685,55 690,72 696,100 702,130 708,158 714,175
+        720,185 726,192 732,200 738,205 744,208 750,210 756,208 762,205 768,200 770,198
+      "/>
+
+    <!-- Blade B signal - Teal (#00b8a9), phase shifted by ~77px (1/3 period) -->
+    <polyline fill="none" stroke="#00b8a9" stroke-width="1.5" opacity="0.85"
+      points="
+        80,202 86,207 92,210 98,209 104,206 110,200 115,192 120,185 125,175 130,158
+        136,130 142,100 148,72 154,55 160,52 166,57 172,74 178,102 184,132 190,160
+        196,177 202,186 208,193 214,201 220,207 226,210 232,209 238,206 244,200 250,192
+        255,185 260,175 265,158 270,130 276,100 282,72 288,55 294,52 300,57 306,74
+        312,102 318,132 324,160 330,177 336,186 342,193 348,201 354,207 360,210 366,209
+        372,206 378,200 384,192 390,185 395,175 400,158 405,130 410,100 416,72 422,55
+        428,52 434,57 440,74 446,102 452,132 458,160 464,177 470,186 476,193 482,201
+        488,207 494,210 500,209 506,206 512,200 518,192 524,185 530,175 535,158 540,130
+        545,100 550,72 556,55 562,52 568,57 574,74 580,102 586,132 592,160 598,177
+        604,186 610,193 616,201 622,207 628,210 634,209 640,206 646,200 652,192 658,185
+        664,175 670,158 675,130 680,100 685,72 690,55 696,52 702,57 708,74 714,102
+        720,132 726,160 732,177 738,186 744,193 750,201 756,207 762,210 768,209 770,207
+      "/>
+
+    <!-- Blade C signal - Green (#44dd88), phase shifted by ~154px (2/3 period) -->
+    <polyline fill="none" stroke="#44dd88" stroke-width="1.5" opacity="0.8"
+      points="
+        80,137 86,112 92,88 98,70 104,58 110,54 115,58 120,70 125,90 130,115
+        136,140 142,163 148,180 154,192 160,200 166,207 172,210 178,209 184,204 190,196
+        196,186 202,173 208,154 214,130 220,105 226,82 232,66 238,56 244,54 250,60
+        255,72 260,92 265,118 270,143 276,165 282,182 288,193 294,202 300,208 306,210
+        312,209 318,203 324,194 330,183 336,170 342,150 348,127 354,102 360,80 366,64
+        372,55 378,54 384,60 390,74 395,94 400,120 405,146 410,167 416,183 422,194
+        428,203 434,209 440,210 446,208 452,202 458,192 464,180 470,164 476,142 482,118
+        488,95 494,76 500,62 506,54 512,55 518,62 524,76 530,96 535,122 540,148
+        545,170 550,184 556,195 562,204 568,209 574,210 580,208 586,200 592,190 598,177
+        604,160 610,138 616,114 622,92 628,74 634,60 640,54 646,56 652,64 658,80
+        664,100 670,124 675,150 680,172 685,186 690,196 696,204 702,210 708,210 714,206
+        720,198 726,187 732,173 738,155 744,134 750,110 756,90 762,72 768,60 770,57
+      "/>
+  </g>
+
+  <!-- Blade passage markers (vertical tick marks at peaks) -->
+  <g clip-path="url(#chartClip)" stroke="#00d4ff" stroke-width="0.5" opacity="0.2" stroke-dasharray="2,3">
+    <line x1="120" y1="30" x2="120" y2="340"/>
+    <line x1="260" y1="30" x2="260" y2="340"/>
+    <line x1="400" y1="30" x2="400" y2="340"/>
+    <line x1="540" y1="30" x2="540" y2="340"/>
+    <line x1="680" y1="30" x2="680" y2="340"/>
+  </g>
+
+  <!-- Period annotation -->
+  <g filter="url(#traceGlow)" opacity="0.5">
+    <line x1="120" y1="42" x2="260" y2="42" stroke="#00d4ff" stroke-width="0.8"/>
+    <line x1="120" y1="38" x2="120" y2="46" stroke="#00d4ff" stroke-width="0.8"/>
+    <line x1="260" y1="38" x2="260" y2="46" stroke="#00d4ff" stroke-width="0.8"/>
+    <text x="190" y="39" fill="#00d4ff" font-family="monospace" font-size="8" text-anchor="middle">T = 1.02s</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(590, 45)">
+    <rect x="0" y="0" width="165" height="62" rx="3" fill="#0a0a0f" fill-opacity="0.9" stroke="#1a2a3a" stroke-width="0.5"/>
+    <line x1="10" y1="18" x2="35" y2="18" stroke="#00d4ff" stroke-width="2"/>
+    <text x="42" y="22" fill="#00d4ff" font-family="monospace" font-size="10" opacity="0.9">Blade A (0°)</text>
+    <line x1="10" y1="35" x2="35" y2="35" stroke="#00b8a9" stroke-width="2"/>
+    <text x="42" y="39" fill="#00b8a9" font-family="monospace" font-size="10" opacity="0.9">Blade B (120°)</text>
+    <line x1="10" y1="52" x2="35" y2="52" stroke="#44dd88" stroke-width="2"/>
+    <text x="42" y="56" fill="#44dd88" font-family="monospace" font-size="10" opacity="0.9">Blade C (240°)</text>
+  </g>
+
+  <!-- Top-left title -->
+  <text x="85" y="22" fill="#00d4ff" font-family="monospace" font-size="11" opacity="0.7">BLADE TIMING — SIGNAL EXTRACTION</text>
+
+  <!-- Stats panel bottom-left -->
+  <g>
+    <rect x="85" y="365" width="250" height="25" rx="2" fill="#0a0a0f" fill-opacity="0.8" stroke="#1a2a3a" stroke-width="0.5"/>
+    <text x="92" y="381" fill="#00d4ff" font-family="monospace" font-size="9" opacity="0.5">RPM: 12.4 | BPF: 0.62 Hz | SNR: 34.2 dB</text>
+  </g>
+
+  <!-- Timestamp bottom-right -->
+  <text x="765" y="393" fill="#00d4ff" font-family="monospace" font-size="8" opacity="0.35" text-anchor="end">2024-01-15 14:32:07 UTC | 400 Hz sample rate</text>
+</svg>
