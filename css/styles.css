@@ -342,31 +342,18 @@ h3 { font-size: clamp(1.125rem, 2vw, 1.5rem); }
 }
 
 .hero__tagline {
+  display: inline-block;
   font-family: var(--font-heading);
-  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  font-size: 0.8125rem;
   font-weight: 600;
   color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  margin-bottom: var(--space-sm);
-}
-
-.hero__position {
-  font-size: clamp(1rem, 1.8vw, 1.1875rem);
-  color: var(--text-secondary);
-  margin-bottom: var(--space-sm);
-  font-weight: 500;
-}
-
-.hero__confirm {
-  font-family: var(--font-heading);
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  font-weight: 600;
-  color: var(--text);
-  margin-bottom: var(--space-lg);
-  max-width: 680px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-bottom: var(--space-md);
+  padding: 0.375rem 1.125rem;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  border-radius: 999px;
+  background: rgba(0, 212, 255, 0.06);
 }
 
 .hero__ctas {
@@ -485,6 +472,13 @@ h3 { font-size: clamp(1.125rem, 2vw, 1.5rem); }
   width: 48px;
   height: 48px;
   margin-bottom: var(--space-sm);
+  flex-shrink: 0;
+}
+
+.pain-card__icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .pain-card__title {
@@ -533,6 +527,12 @@ h3 { font-size: clamp(1.125rem, 2vw, 1.5rem); }
   width: 80px;
   height: 80px;
   margin: 0 auto var(--space-sm);
+}
+
+.gap-visual__icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .gap-visual__label {
@@ -625,6 +625,12 @@ h3 { font-size: clamp(1.125rem, 2vw, 1.5rem); }
   width: 64px;
   height: 64px;
   margin-bottom: var(--space-sm);
+}
+
+.process-card__icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .process-card__title {
@@ -943,6 +949,12 @@ h3 { font-size: clamp(1.125rem, 2vw, 1.5rem); }
   margin-bottom: var(--space-sm);
 }
 
+.when-card__icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 .when-card__title {
   font-size: 1rem;
   font-weight: 600;
@@ -1078,13 +1090,6 @@ h3 { font-size: clamp(1.125rem, 2vw, 1.5rem); }
   color: var(--text-secondary);
   opacity: 0.7;
   letter-spacing: 0.04em;
-}
-
-.footer__tagline {
-  font-size: 0.8125rem;
-  color: var(--accent);
-  font-weight: 500;
-  opacity: 0.8;
 }
 
 .footer__copy {
