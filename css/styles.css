@@ -1464,7 +1464,7 @@ h3 { font-size: clamp(1.125rem, 2vw, 1.5rem); }
 }
 
 .fade-in.visible {
-  opacity: 1;
+  opacity: 0.75;
   transform: translateY(0);
 }
 
