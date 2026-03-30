@@ -474,6 +474,17 @@ h3 { font-size: clamp(1.125rem, 2vw, 1.5rem); }
   background: var(--bg-alt);
 }
 
+/* Background images for key sections */
+#solution {
+  background: linear-gradient(rgba(10, 10, 15, 0.82), rgba(10, 10, 15, 0.82)),
+              url('../assets/images/technology_close2.JPG') center / cover no-repeat;
+}
+
+#deploy {
+  background: linear-gradient(rgba(10, 10, 15, 0.82), rgba(10, 10, 15, 0.82)),
+              url('../assets/images/technology_wide.JPG') center / cover no-repeat;
+}
+
 .section--cta {
   background: linear-gradient(180deg, var(--bg-alt) 0%, var(--bg) 100%);
 }
