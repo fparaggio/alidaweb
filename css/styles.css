@@ -727,13 +727,14 @@ h3 { font-size: clamp(1.125rem, 2vw, 1.5rem); }
   background: linear-gradient(90deg, transparent, var(--accent), transparent);
   border-radius: 1px;
   animation: vpSignalFlow 3.5s ease-in-out infinite;
+  will-change: transform, opacity;
 }
 
 @keyframes vpSignalFlow {
-  0%   { left: -80px; opacity: 0; }
+  0%   { transform: translateX(-80px); opacity: 0; }
   10%  { opacity: 1; }
   90%  { opacity: 1; }
-  100% { left: calc(100% + 80px); opacity: 0; }
+  100% { transform: translateX(1200px); opacity: 0; }
 }
 
 /* Individual step */
