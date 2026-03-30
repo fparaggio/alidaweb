@@ -159,55 +159,156 @@
       </div>
     </section>
 
-    <!-- ====== 4. SOLUTION ====== -->
+    <!-- ====== 4. SOLUTION — VALIDATION PIPELINE ====== -->
     <section class="section section--alt" id="solution">
       <div class="container">
         <div class="section__header fade-in">
           <h2 class="section__title">A validation layer for when monitoring is not enough</h2>
-          <p class="section__copy">ALIDA acts as a <strong>physical validation endpoint</strong> integrated into existing workflows.</p>
+          <p class="section__copy">ALIDA provides a physical validation endpoint for rotor dynamics—integrated into existing workflows, without turbine shutdown.</p>
         </div>
 
-        <div class="process-grid fade-in">
-          <div class="process-card">
-            <div class="process-card__number">01</div>
-            <div class="process-card__icon">
-              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="32" cy="32" r="24" stroke="#00d4ff" stroke-width="1.5" fill="none"/>
-                <circle cx="32" cy="32" r="12" stroke="#00d4ff" stroke-width="1" fill="none"/>
-                <circle cx="32" cy="32" r="3" fill="#00d4ff"/>
-                <line x1="32" y1="4" x2="32" y2="16" stroke="#00d4ff" stroke-width="1.5"/>
-                <line x1="32" y1="48" x2="32" y2="60" stroke="#00d4ff" stroke-width="1.5"/>
-                <line x1="4" y1="32" x2="16" y2="32" stroke="#00d4ff" stroke-width="1.5"/>
-                <line x1="48" y1="32" x2="60" y2="32" stroke="#00d4ff" stroke-width="1.5"/>
-              </svg>
-            </div>
-            <h3 class="process-card__title">Capture</h3>
-            <p class="process-card__text">Laser + video sensing.<br>No turbine modification.</p>
+        <!-- Horizontal pipeline: Capture → Analyze → Validate → Correct → Verify -->
+        <div class="vp fade-in" role="list" aria-label="Validation pipeline">
+
+          <!-- Signal flow line (animated) -->
+          <div class="vp__flow-line" aria-hidden="true">
+            <div class="vp__flow-line-track"></div>
+            <div class="vp__flow-line-signal"></div>
           </div>
-          <div class="process-card">
-            <div class="process-card__number">02</div>
-            <div class="process-card__icon">
-              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="6" y="6" width="52" height="52" rx="6" stroke="#00d4ff" stroke-width="1.5" fill="none"/>
-                <path d="M12 42 Q20 20 28 36 T44 28 T52 34" stroke="#00d4ff" stroke-width="2" fill="none"/>
-                <path d="M12 38 Q20 30 28 42 T44 34 T52 38" stroke="#00d4ff" stroke-width="1" fill="none" opacity="0.4"/>
+
+          <!-- Step 1: Capture -->
+          <div class="vp__step" role="listitem" tabindex="0" data-vp-step="1">
+            <div class="vp__step-number">01</div>
+            <div class="vp__step-icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="24" r="18" stroke="#00d4ff" stroke-width="1.2" fill="none"/>
+                <circle cx="24" cy="24" r="9" stroke="#00d4ff" stroke-width="0.8" fill="none"/>
+                <circle cx="24" cy="24" r="2.5" fill="#00d4ff"/>
+                <line x1="24" y1="3" x2="24" y2="12" stroke="#00d4ff" stroke-width="1.2"/>
+                <line x1="24" y1="36" x2="24" y2="45" stroke="#00d4ff" stroke-width="1.2"/>
+                <line x1="3" y1="24" x2="12" y2="24" stroke="#00d4ff" stroke-width="1.2"/>
+                <line x1="36" y1="24" x2="45" y2="24" stroke="#00d4ff" stroke-width="1.2"/>
               </svg>
             </div>
-            <h3 class="process-card__title">Analyze</h3>
-            <p class="process-card__text">Rotor dynamics.<br>1P / imbalance detection.</p>
+            <h3 class="vp__step-title">Capture</h3>
+            <ul class="vp__step-bullets">
+              <li>Laser + video sensing</li>
+              <li>No turbine shutdown</li>
+              <li>No downtime</li>
+            </ul>
+            <div class="vp__step-detail">
+              <p>Measure turbines during normal operation. Deploy in minutes. No permits. No intervention.</p>
+            </div>
           </div>
-          <div class="process-card">
-            <div class="process-card__number">03</div>
-            <div class="process-card__icon">
-              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M32 4 L58 18 V46 L32 60 L6 46 V18 Z" stroke="#00d4ff" stroke-width="1.5" fill="none"/>
-                <polyline points="22,32 30,40 44,24" stroke="#00d4ff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <div class="vp__connector" aria-hidden="true">
+            <svg viewBox="0 0 32 24" fill="none"><path d="M4 12H28M22 6l6 6-6 6" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+
+          <!-- Step 2: Analyze -->
+          <div class="vp__step" role="listitem" tabindex="0" data-vp-step="2">
+            <div class="vp__step-number">02</div>
+            <div class="vp__step-icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="4" y="4" width="40" height="40" rx="4" stroke="#00d4ff" stroke-width="1.2" fill="none"/>
+                <path d="M10 34 Q16 16 22 28 T34 22 T42 26" stroke="#00d4ff" stroke-width="1.5" fill="none"/>
+                <path d="M10 30 Q16 24 22 34 T34 28 T42 30" stroke="#00d4ff" stroke-width="0.8" fill="none" opacity="0.4"/>
               </svg>
             </div>
-            <h3 class="process-card__title">Validate</h3>
-            <p class="process-card__text">Structural confirmation.<br>Decision-ready output.</p>
+            <h3 class="vp__step-title">Analyze</h3>
+            <ul class="vp__step-bullets">
+              <li>Rotor dynamics</li>
+              <li>Imbalance detection</li>
+              <li>Measured pitch offset</li>
+            </ul>
+            <div class="vp__step-detail">
+              <p>Identify which turbine, and which blades, are off. Quantify imbalance. Prioritize action.</p>
+            </div>
+          </div>
+
+          <div class="vp__connector" aria-hidden="true">
+            <svg viewBox="0 0 32 24" fill="none"><path d="M4 12H28M22 6l6 6-6 6" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+
+          <!-- Step 3: Validate -->
+          <div class="vp__step" role="listitem" tabindex="0" data-vp-step="3">
+            <div class="vp__step-number">03</div>
+            <div class="vp__step-icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 4 L44 14 V34 L24 44 L4 34 V14 Z" stroke="#00d4ff" stroke-width="1.2" fill="none"/>
+                <polyline points="16,24 22,30 34,18" stroke="#00d4ff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="vp__step-title">Validate</h3>
+            <ul class="vp__step-bullets">
+              <li>Structural confirmation</li>
+              <li>Physics-based evidence</li>
+            </ul>
+            <div class="vp__step-detail">
+              <p>Move beyond SCADA assumptions. Confirm whether intervention is justified.</p>
+            </div>
+          </div>
+
+          <div class="vp__connector" aria-hidden="true">
+            <svg viewBox="0 0 32 24" fill="none"><path d="M4 12H28M22 6l6 6-6 6" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+
+          <!-- Step 4: Correct (emphasized) -->
+          <div class="vp__step vp__step--emphasis" role="listitem" tabindex="0" data-vp-step="4">
+            <div class="vp__step-number">04</div>
+            <div class="vp__step-icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="24" r="18" stroke="#00ff88" stroke-width="1.2" fill="none"/>
+                <path d="M24 12 V24 L18 30" stroke="#00ff88" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 16 L24 24 L32 16" stroke="#00ff88" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                <circle cx="24" cy="24" r="2" fill="#00ff88"/>
+              </svg>
+            </div>
+            <h3 class="vp__step-title">Correct</h3>
+            <ul class="vp__step-bullets">
+              <li>Targeted pitch correction</li>
+              <li>OEM-ready adjustments</li>
+            </ul>
+            <div class="vp__step-detail">
+              <p>Fix only what needs fixing. Blade-level actions. No blanket interventions.</p>
+            </div>
+          </div>
+
+          <div class="vp__connector" aria-hidden="true">
+            <svg viewBox="0 0 32 24" fill="none"><path d="M4 12H28M22 6l6 6-6 6" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+
+          <!-- Step 5: Verify (emphasized) -->
+          <div class="vp__step vp__step--emphasis" role="listitem" tabindex="0" data-vp-step="5">
+            <div class="vp__step-number">05</div>
+            <div class="vp__step-icon">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="4" y="4" width="40" height="40" rx="4" stroke="#00ff88" stroke-width="1.2" fill="none"/>
+                <polyline points="14,24 20,30 34,16" stroke="#00ff88" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="10" y1="38" x2="38" y2="38" stroke="#00ff88" stroke-width="1" opacity="0.3"/>
+                <line x1="10" y1="36" x2="38" y2="36" stroke="#00ff88" stroke-width="0.5" opacity="0.2"/>
+              </svg>
+            </div>
+            <h3 class="vp__step-title">Verify</h3>
+            <ul class="vp__step-bullets">
+              <li>Post-fix measurement</li>
+              <li>Residual imbalance quantified</li>
+            </ul>
+            <div class="vp__step-detail">
+              <p>Measure again. Compare before vs after. Prove the intervention worked.</p>
+            </div>
           </div>
         </div>
+
+        <!-- Closed loop feedback -->
+        <div class="vp__loop fade-in" aria-label="Closed-loop feedback">
+          <svg class="vp__loop-arrow" viewBox="0 0 800 48" fill="none" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M760 8 C760 36 40 36 40 8" stroke="rgba(0,212,255,0.25)" stroke-width="1.5" fill="none" stroke-dasharray="6 4"/>
+            <polygon points="36,12 44,12 40,4" fill="rgba(0,212,255,0.35)"/>
+          </svg>
+          <span class="vp__loop-label">Feeds back into monitoring and decision systems</span>
+        </div>
+
       </div>
     </section>
 
