@@ -1341,6 +1341,45 @@ h3 { font-size: clamp(1.125rem, 2vw, 1.5rem); }
   line-height: 1.7;
 }
 
+.team-card__list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-sm) 0 0;
+  text-align: left;
+}
+
+.team-card__list li {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  padding-left: 1.2em;
+  position: relative;
+}
+
+.team-card__list li::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Tagline */
+.tagline__heading {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  margin-bottom: var(--space-xs);
+}
+
+.tagline__sub {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
 /* ============================================
    CTA SECTION
    ============================================ */
