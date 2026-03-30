@@ -1449,6 +1449,30 @@ h3 { font-size: clamp(1.125rem, 2vw, 1.5rem); }
   letter-spacing: 0.04em;
 }
 
+.footer__offices {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  order: 1;
+  padding-top: 0.5rem;
+}
+
+.footer__office {
+  font-size: 0.6875rem;
+  color: var(--text-secondary);
+  opacity: 0.5;
+  letter-spacing: 0.02em;
+}
+
+.footer__office-sep {
+  font-size: 0.6875rem;
+  color: var(--text-secondary);
+  opacity: 0.3;
+}
+
 .footer__copy {
   font-size: 0.8125rem;
   color: var(--text-secondary);
