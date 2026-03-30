@@ -36,7 +36,6 @@
         <li><a href="#problem" class="nav__link">Problem</a></li>
         <li><a href="#solution" class="nav__link">Solution</a></li>
         <li><a href="#usecase" class="nav__link">Use Case</a></li>
-        <li><a href="#proof" class="nav__link">Proof</a></li>
         <li><a href="#impact" class="nav__link">Impact</a></li>
         <li><a href="#deploy" class="nav__link">Deploy</a></li>
         <li><a href="#team" class="nav__link">Team</a></li>
@@ -51,7 +50,7 @@
     <section class="hero" id="hero">
       <!-- Real field deployment image as background -->
       <div class="hero__image-bg">
-        <img src="assets/images/field-deploy.svg"
+        <img src="https://alida.crux.it/assets/images/background_tech.JPG"
              alt="ALIDA laser system deployed in the field observing a wind turbine at distance"
              class="hero__bg-img">
         <div class="hero__image-overlay"></div>
@@ -59,14 +58,13 @@
 
 
       <div class="hero__content container">
-        <p class="hero__tagline fade-in">Turning anomaly detection into decision certainty</p>
         <h1 class="hero__headline fade-in">When monitoring detects a problem — who confirms it?</h1>
         <p class="hero__sub fade-in">ALIDA brings physical validation into wind turbine operations.</p>
         <p class="hero__strong fade-in">Works on operating turbines — no shutdown required</p>
         <p class="hero__support fade-in">Field-deployed system · Real environment</p>
         <div class="hero__ctas fade-in">
           <a href="#cta" class="btn btn--primary btn--lg">Request Pilot</a>
-          <a href="#proof" class="btn btn--outline btn--lg">See Evidence</a>
+          <a href="#usecase" class="btn btn--outline btn--lg">See Evidence</a>
         </div>
       </div>
     </section>
@@ -213,60 +211,49 @@
       </div>
     </section>
 
-    <!-- ====== 5. USE CASE — ROTOR TRACKING IMAGE ====== -->
+    <!-- ====== 5. USE CASE & PROOF — DUAL IMAGE ====== -->
     <section class="section" id="usecase">
       <div class="container">
         <div class="section__header fade-in">
-          <h2 class="section__title">From anomaly signal to structural insight</h2>
-          <p class="section__copy--caption">Geometry reconstruction and phase estimation from real rotor motion</p>
+          <h2 class="section__title">From signal to decision</h2>
+          <p class="section__copy--caption">Geometry reconstruction and blade-level analysis — from anomaly to structural validation</p>
         </div>
 
-        <!-- IMAGE OVERLAY: Rotor tracking analysis -->
-        <div class="img-overlay fade-in">
-          <div class="img-overlay__frame">
-            <img src="assets/images/rotor-ellipse.svg"
-                 alt="Rotor ellipse tracking and geometry reconstruction showing blade tip positions and phase angles"
-                 class="img-overlay__img"
-                 loading="lazy">
-            <!-- Scanline effect -->
-            <div class="img-overlay__scanline"></div>
-            <!-- Corner brackets -->
-            <svg class="img-overlay__corners" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-              <polyline points="0,8 0,0 8,0" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
-              <polyline points="92,0 100,0 100,8" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
-              <polyline points="0,92 0,100 8,100" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
-              <polyline points="92,100 100,100 100,92" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
-            </svg>
+        <!-- DUAL IMAGE: Rotor tracking + Blade timing side by side -->
+        <div class="dual-overlay fade-in">
+          <div class="img-overlay">
+            <div class="img-overlay__frame">
+              <img src="assets/images/rotor-ellipse.svg"
+                   alt="Rotor ellipse tracking and geometry reconstruction showing blade tip positions and phase angles"
+                   class="img-overlay__img"
+                   loading="lazy">
+              <div class="img-overlay__scanline"></div>
+              <svg class="img-overlay__corners" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                <polyline points="0,8 0,0 8,0" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
+                <polyline points="92,0 100,0 100,8" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
+                <polyline points="0,92 0,100 8,100" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
+                <polyline points="92,100 100,100 100,92" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
+              </svg>
+            </div>
+            <p class="img-overlay__caption">Rotor geometry reconstruction — confirming structural imbalance.</p>
           </div>
-          <p class="img-overlay__caption">Used to confirm rotor imbalance and support targeted decisions.</p>
-        </div>
-      </div>
-    </section>
 
-    <!-- ====== 6. PROOF — BLADE DATA IMAGE ====== -->
-    <section class="section section--alt" id="proof">
-      <div class="container">
-        <div class="section__header fade-in">
-          <h2 class="section__title">From data to decision</h2>
-          <p class="section__copy--caption">Blade-level signal extraction enabling structural validation</p>
-        </div>
-
-        <!-- IMAGE OVERLAY: Blade passage data -->
-        <div class="img-overlay fade-in">
-          <div class="img-overlay__frame">
-            <img src="assets/images/blade-timing.svg"
-                 alt="Blade passage timing chart showing per-blade signal extraction with enumeration pattern and passage duration distribution"
-                 class="img-overlay__img"
-                 loading="lazy">
-            <div class="img-overlay__scanline"></div>
-            <svg class="img-overlay__corners" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-              <polyline points="0,8 0,0 8,0" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
-              <polyline points="92,0 100,0 100,8" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
-              <polyline points="0,92 0,100 8,100" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
-              <polyline points="92,100 100,100 100,92" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
-            </svg>
+          <div class="img-overlay">
+            <div class="img-overlay__frame">
+              <img src="assets/images/blade-timing.svg"
+                   alt="Blade passage timing chart showing per-blade signal extraction with enumeration pattern and passage duration distribution"
+                   class="img-overlay__img"
+                   loading="lazy">
+              <div class="img-overlay__scanline"></div>
+              <svg class="img-overlay__corners" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                <polyline points="0,8 0,0 8,0" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
+                <polyline points="92,0 100,0 100,8" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
+                <polyline points="0,92 0,100 8,100" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
+                <polyline points="92,100 100,100 100,92" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
+              </svg>
+            </div>
+            <div class="img-overlay__badge">Real data — not simulation</div>
           </div>
-          <div class="img-overlay__badge">Real data — not simulation</div>
         </div>
       </div>
     </section>
@@ -282,7 +269,7 @@
         <!-- IMAGE OVERLAY: Field setup -->
         <div class="img-overlay fade-in">
           <div class="img-overlay__frame">
-            <img src="assets/images/hero-turbine.svg"
+            <img src="https://alida.crux.it/assets/images/field-deploy.svg"
                  alt="ALIDA field measurement setup with laser system deployed near operating wind turbine"
                  class="img-overlay__img"
                  loading="lazy">
@@ -476,7 +463,7 @@
 
           <div class="team-card">
             <div class="team-card__photo-wrap">
-              <img src="assets/images/team-fp.svg"
+              <img src="https://github.com/user-attachments/assets/1be502f5-d6f4-44ed-8523-84a0c69a7c36"
                    alt="Francesco Paraggio" class="team-card__photo" loading="lazy">
             </div>
             <h3 class="team-card__name">Francesco Paraggio</h3>
@@ -486,7 +473,7 @@
 
           <div class="team-card">
             <div class="team-card__photo-wrap">
-              <img src="assets/images/team-nm.svg"
+              <img src="https://github.com/user-attachments/assets/c01e19fe-8e84-4115-9d94-25dcc1cb0682"
                    alt="Nico Macrionitis" class="team-card__photo" loading="lazy">
             </div>
             <h3 class="team-card__name">Nico Macrionitis</h3>
@@ -496,7 +483,7 @@
 
           <div class="team-card">
             <div class="team-card__photo-wrap">
-              <img src="assets/images/team-fs.svg"
+              <img src="https://github.com/user-attachments/assets/fedd143c-e5e2-4996-ac8d-fc76811cb476"
                    alt="Fabrizio Sardella" class="team-card__photo" loading="lazy">
             </div>
             <h3 class="team-card__name">Fabrizio Sardella</h3>

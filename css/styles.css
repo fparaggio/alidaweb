@@ -835,6 +835,23 @@ h3 { font-size: clamp(1.125rem, 2vw, 1.5rem); }
 }
 
 /* ============================================
+   DUAL OVERLAY — side-by-side image pair
+   ============================================ */
+.dual-overlay {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .dual-overlay {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
    IMPACT
    ============================================ */
 .impact-grid {
