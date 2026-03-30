@@ -134,6 +134,27 @@
     };
   }
 
+  // ---- Validation Pipeline: Click-to-expand on steps ----
+  var vpSteps = document.querySelectorAll('.vp__step');
+  vpSteps.forEach(function (step) {
+    step.addEventListener('click', function () {
+      var wasActive = step.classList.contains('is-active');
+      // Close all other steps
+      vpSteps.forEach(function (s) { s.classList.remove('is-active'); });
+      // Toggle current
+      if (!wasActive) {
+        step.classList.add('is-active');
+      }
+    });
+  });
+
+  // Close expanded step when clicking outside
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.vp__step')) {
+      vpSteps.forEach(function (s) { s.classList.remove('is-active'); });
+    }
+  });
+
   // ---- Init ----
   handleHeaderScroll();
 })();
