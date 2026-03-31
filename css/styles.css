@@ -1593,7 +1593,7 @@ h3 { font-size: clamp(1.125rem, 2vw, 1.5rem); }
   }
 
   .hero__bg-img {
-    object-position: left center;
+    object-position: 65% center;
   }
 
   .pain-grid {
