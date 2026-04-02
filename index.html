@@ -316,84 +316,164 @@
 
       </div>
     </section>
-<!-- ====== FIELD SETUP - EVIDENCE IMAGE ====== -->
-    <section class="section" id="field-evidence">
+    <!-- ====== 5. USE CASE — FROM DETECTION TO DIAGNOSIS ====== -->
+    <section class="section section--alt" id="usecase">
       <div class="container">
         <div class="section__header fade-in">
-          <h2 class="section__title">Deployed in the field</h2>
-          <p class="section__copy--caption">Real measurement setup - operating turbine, no shutdown</p>
+          <h2 class="section__title">From detection to diagnosis</h2>
+          <p class="section__copy">Detection is not diagnosis.</p>
+          <p class="section__copy">From SCADA alone, the cause is ambiguous.</p>
         </div>
 
-        <!-- IMAGE OVERLAY: Field setup -->
-        <div class="img-overlay fade-in">
-          <div class="img-overlay__frame">
-            <img src="assets/images/field-deploy.svg"
-                 alt="ALIDA field measurement setup with laser system deployed near operating wind turbine"
-                 class="img-overlay__img"
-                 loading="lazy">
-            <div class="img-overlay__scanline"></div>
-            <svg class="img-overlay__corners" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-              <polyline points="0,8 0,0 8,0" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
-              <polyline points="92,0 100,0 100,8" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
-              <polyline points="0,92 0,100 8,100" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
-              <polyline points="92,100 100,100 100,92" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
-            </svg>
+        <!-- Step 1: SCADA Detection -->
+        <div class="uc-step fade-in">
+          <div class="uc-step__number">01</div>
+          <div class="uc-step__content">
+            <h3 class="uc-step__title">SCADA flags underperformance</h3>
+            <p class="uc-step__text">The monitoring system detects a deviation from the expected power curve. Energy output is consistently below reference in the sub-rated wind speed region.</p>
+            <p class="uc-step__accent">The signal is clear. The cause is not.</p>
           </div>
-          <p class="img-overlay__caption">Laser system deployed at ground level - no scaffold, no drone, no shutdown.</p>
-        </div>
-      </div>
-    </section>
-    <!-- ====== 5. USE CASE & PROOF - DUAL IMAGE ====== -->
-    <section class="section" id="usecase">
-      <div class="container">
-        <div class="section__header fade-in">
-          <h2 class="section__title">From signal to decision</h2>
-          <p class="section__copy--caption">Geometry reconstruction and blade-level analysis - from anomaly to structural validation</p>
         </div>
 
-        <!-- DUAL IMAGE: Rotor tracking + Blade timing side by side -->
-        <div class="dual-overlay fade-in">
-          <div class="img-overlay">
-            <div class="img-overlay__frame">
-              <img src="assets/images/rotor-ellipse.svg"
-                   alt="Rotor ellipse tracking and geometry reconstruction showing blade tip positions and phase angles"
-                   class="img-overlay__img"
-                   loading="lazy">
-              <div class="img-overlay__scanline"></div>
-              <svg class="img-overlay__corners" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-                <polyline points="0,8 0,0 8,0" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
-                <polyline points="92,0 100,0 100,8" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
-                <polyline points="0,92 0,100 8,100" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
-                <polyline points="92,100 100,100 100,92" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
-              </svg>
+        <!-- Step 2: Ambiguity -->
+        <div class="uc-step fade-in">
+          <div class="uc-step__number">02</div>
+          <div class="uc-step__content">
+            <h3 class="uc-step__title">Root cause is unknown</h3>
+            <p class="uc-step__text">The loss pattern is visible, but its origin is indeterminate. From SCADA data alone, the underperformance could be caused by:</p>
+            <ul class="uc-step__causes">
+              <li>Pitch misalignment on one or more blades</li>
+              <li>Yaw misalignment of the nacelle</li>
+              <li>Aerodynamic degradation or blade damage</li>
+            </ul>
+            <p class="uc-step__text">These failure modes produce overlapping signatures in the power curve. They are indistinguishable from SCADA.</p>
+          </div>
+        </div>
+
+        <!-- Step 3: Power Curve Evidence (SVG) -->
+        <div class="uc-step uc-step--visual fade-in">
+          <div class="uc-step__number">03</div>
+          <div class="uc-step__content">
+            <h3 class="uc-step__title">Power curve evidence</h3>
+            <div class="img-overlay">
+              <div class="img-overlay__frame">
+                <img src="assets/images/power-curve-underperformance.svg"
+                     alt="Power curve showing SCADA underperformance — measured output below reference in sub-rated region with unknown root cause"
+                     class="img-overlay__img"
+                     loading="lazy">
+                <div class="img-overlay__scanline"></div>
+                <svg class="img-overlay__corners" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                  <polyline points="0,8 0,0 8,0" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
+                  <polyline points="92,0 100,0 100,8" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
+                  <polyline points="0,92 0,100 8,100" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
+                  <polyline points="92,100 100,100 100,92" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
+                </svg>
+              </div>
+              <p class="img-overlay__caption">Underperformance is visible. The cause is not.</p>
             </div>
-            <p class="img-overlay__caption">Rotor geometry reconstruction - confirming structural imbalance.</p>
-          </div>
-
-          <div class="img-overlay">
-            <div class="img-overlay__frame">
-              <img src="assets/images/blade-timing.svg"
-                   alt="Blade passage timing chart showing per-blade signal extraction with enumeration pattern and passage duration distribution"
-                   class="img-overlay__img"
-                   loading="lazy">
-              <div class="img-overlay__scanline"></div>
-              <svg class="img-overlay__corners" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-                <polyline points="0,8 0,0 8,0" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
-                <polyline points="92,0 100,0 100,8" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
-                <polyline points="0,92 0,100 8,100" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
-                <polyline points="92,100 100,100 100,92" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
-              </svg>
-            </div>
-            <div class="img-overlay__badge">Real data - not simulation</div>
           </div>
         </div>
+
+        <!-- Step 4: Field Deployment (reuse existing SVG) -->
+        <div class="uc-step fade-in">
+          <div class="uc-step__number">04</div>
+          <div class="uc-step__content">
+            <h3 class="uc-step__title">Field deployment — ALIDA measurement</h3>
+            <p class="uc-step__text">ALIDA is deployed on-site. The laser system measures the operating turbine from ground level. Minutes of recording. Direct physical observation. No shutdown. No scaffold. No drone.</p>
+            <div class="img-overlay">
+              <div class="img-overlay__frame">
+                <img src="assets/images/field-deploy.svg"
+                     alt="ALIDA field measurement setup with laser system deployed near operating wind turbine"
+                     class="img-overlay__img"
+                     loading="lazy">
+                <div class="img-overlay__scanline"></div>
+                <svg class="img-overlay__corners" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                  <polyline points="0,8 0,0 8,0" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
+                  <polyline points="92,0 100,0 100,8" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
+                  <polyline points="0,92 0,100 8,100" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
+                  <polyline points="92,100 100,100 100,92" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
+                </svg>
+              </div>
+              <p class="img-overlay__caption">Ground-level measurement of an operating turbine — minutes of data acquisition.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 5: Geometry Reconstruction (reuse existing SVGs) -->
+        <div class="uc-step uc-step--visual fade-in">
+          <div class="uc-step__number">05</div>
+          <div class="uc-step__content">
+            <h3 class="uc-step__title">Geometry reconstruction &amp; blade-level analysis</h3>
+            <p class="uc-step__text">From raw signal to rotor physics. ALIDA reconstructs the rotor geometry and extracts blade-level timing. Each blade is individually identified and measured.</p>
+            <div class="dual-overlay">
+              <div class="img-overlay">
+                <div class="img-overlay__frame">
+                  <img src="assets/images/rotor-ellipse.svg"
+                       alt="Rotor ellipse tracking and geometry reconstruction showing blade tip positions and phase angles"
+                       class="img-overlay__img"
+                       loading="lazy">
+                  <div class="img-overlay__scanline"></div>
+                  <svg class="img-overlay__corners" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                    <polyline points="0,8 0,0 8,0" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
+                    <polyline points="92,0 100,0 100,8" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
+                    <polyline points="0,92 0,100 8,100" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
+                    <polyline points="92,100 100,100 100,92" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
+                  </svg>
+                </div>
+                <p class="img-overlay__caption">Rotor geometry reconstruction — confirming structural imbalance.</p>
+              </div>
+              <div class="img-overlay">
+                <div class="img-overlay__frame">
+                  <img src="assets/images/blade-timing.svg"
+                       alt="Blade passage timing chart showing per-blade signal extraction with enumeration pattern and passage duration distribution"
+                       class="img-overlay__img"
+                       loading="lazy">
+                  <div class="img-overlay__scanline"></div>
+                  <svg class="img-overlay__corners" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                    <polyline points="0,8 0,0 8,0" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
+                    <polyline points="92,0 100,0 100,8" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
+                    <polyline points="0,92 0,100 8,100" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
+                    <polyline points="92,100 100,100 100,92" stroke="rgba(0,212,255,0.4)" stroke-width="0.5" fill="none"/>
+                  </svg>
+                </div>
+                <div class="img-overlay__badge">Real data — not simulation</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 6: Clear Diagnosis -->
+        <div class="uc-step fade-in">
+          <div class="uc-step__number">06</div>
+          <div class="uc-step__content">
+            <h3 class="uc-step__title">Clear diagnosis</h3>
+            <p class="uc-step__text">The ambiguity is resolved. ALIDA identifies:</p>
+            <ul class="uc-step__causes">
+              <li>Which blade is misaligned</li>
+              <li>Whether it is a pitch or yaw issue</li>
+              <li>The exact angle deviation (e.g. +1.8° on Blade 2)</li>
+            </ul>
+            <p class="uc-step__accent">From uncertain signal to structural certainty.</p>
+          </div>
+        </div>
+
+        <!-- Step 7: Actionable Correction -->
+        <div class="uc-step fade-in">
+          <div class="uc-step__number">07</div>
+          <div class="uc-step__content">
+            <h3 class="uc-step__title">Actionable correction</h3>
+            <p class="uc-step__text">The operator acts on precise, validated information. Correct the specific blade. Adjust the exact angle. No guesswork. No broad inspection campaign. Reduced energy losses and targeted maintenance.</p>
+            <p class="uc-step__accent">The right intervention. The first time.</p>
+          </div>
+        </div>
+
       </div>
     </section>
 
     
 
     <!-- ====== 7. BUSINESS IMPACT ====== -->
-    <section class="section section--alt" id="impact">
+    <section class="section" id="impact">
       <div class="container">
         <div class="section__header fade-in">
           <h2 class="section__title">Why it matters</h2>

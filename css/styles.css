@@ -1036,6 +1036,119 @@ h3 { font-size: clamp(1.125rem, 2vw, 1.5rem); }
 }
 
 /* ============================================
+   USE CASE — STEP-BY-STEP NARRATIVE
+   ============================================ */
+.uc-step {
+  display: flex;
+  gap: var(--space-md);
+  max-width: 860px;
+  margin: 0 auto var(--space-lg);
+  align-items: flex-start;
+}
+
+.uc-step__number {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--accent);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 50%;
+  background: rgba(0, 212, 255, 0.04);
+  line-height: 1;
+  margin-top: var(--space-xs);
+}
+
+.uc-step__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.uc-step__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.125rem, 2vw, 1.35rem);
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: var(--space-xs);
+}
+
+.uc-step__text {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: var(--space-sm);
+}
+
+.uc-step__accent {
+  font-family: var(--font-heading);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-top: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.uc-step__causes {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-xs) 0 var(--space-sm);
+}
+
+.uc-step__causes li {
+  position: relative;
+  padding-left: 1.5rem;
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+  line-height: 1.8;
+}
+
+.uc-step__causes li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.uc-step--visual {
+  flex-direction: column;
+}
+
+.uc-step--visual .uc-step__number {
+  margin-bottom: var(--space-xs);
+}
+
+.uc-step--visual .uc-step__content {
+  width: 100%;
+}
+
+.uc-step .img-overlay {
+  margin-top: var(--space-md);
+}
+
+.uc-step .dual-overlay {
+  margin-top: var(--space-md);
+}
+
+@media (max-width: 767px) {
+  .uc-step {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .uc-step__number {
+    width: 40px;
+    height: 40px;
+    font-size: 0.8125rem;
+  }
+}
+
+/* ============================================
    IMPACT
    ============================================ */
 .impact-grid {
