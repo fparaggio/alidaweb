@@ -80,30 +80,7 @@
   <text x="410" y="445" fill="rgba(138,138,154,0.5)" font-size="11" text-anchor="middle" letter-spacing="0.05em">WIND SPEED (m/s)</text>
   <text x="20" y="220" fill="rgba(138,138,154,0.5)" font-size="11" text-anchor="middle" letter-spacing="0.05em" transform="rotate(-90,20,220)">POWER (kW)</text>
 
-  <!-- Underperformance shaded area between expected and measured curves (4-14 m/s region) -->
-  <!-- Expected ~110% of measured in sub-rated, converging at rated power -->
-  <!-- x = 80 + (ws/18)*660, y = 400 - (p/3200)*360 -->
-  <path d="M226.7,393.8
-           C240,387 252,383 263.3,381.4
-           C275,371 288,360 300,350.5
-           C312,332 325,316 336.7,301
-           C350,273 362,253 373.3,239.1
-           C387,212 398,190 410,171.1
-           C425,142 436,126 446.7,109.1
-           C460,93 472,82 483.3,73.8
-           C498,66 510,63 520,62.5
-           L593.3,62.5
-           C582,62.5 570,63 556.7,65.9
-           C548,66 535,68 520,73.8
-           C510,76 498,83 483.3,96.3
-           C472,105 460,118 446.7,135.6
-           C436,148 425,165 410,191.9
-           C398,210 387,230 373.3,253.8
-           C362,265 350,285 336.7,310
-           C325,325 312,340 300,355
-           C288,365 275,375 263.3,383.1
-           C252,385 240,388 226.7,394.4 Z"
-        fill="url(#ambiguityFill)" opacity="0.8"/>
+
 
   <!-- Expected Curve (reference) — faded / transparent -->
   <!-- ~110% of measured in sub-rated region, converging at rated power:
@@ -131,7 +108,7 @@
            C535,62.5 548,62.5 556.7,62.5
            C570,62.5 582,62.5 593.3,62.5
            L740,62.5"
-        fill="none" stroke="#00d4ff" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+        fill="none" stroke="#00d4ff" stroke-width="2" stroke-linecap="round"/>
 
   <!-- Measured Curve (SCADA) — solid -->
   <!-- Anchor points (same as previous reference curve, now representing measured output):
@@ -161,7 +138,7 @@
            C535,68 548,66 556.7,65.9
            C570,63 582,62.5 593.3,62.5
            L740,62.5"
-        fill="none" stroke="url(#refGrad)" stroke-width="2" stroke-linecap="round"/>
+        fill="none" stroke="#ff3366" stroke-width="2" stroke-linecap="round" stroke-dasharray="8,4"/>
 
   <!-- Rated power line -->
   <line x1="80" y1="62.5" x2="740" y2="62.5" stroke="rgba(138,138,154,0.15)" stroke-width="0.5" stroke-dasharray="4,4"/>
@@ -171,23 +148,11 @@
   <line x1="593.3" y1="40" x2="593.3" y2="400" stroke="rgba(138,138,154,0.1)" stroke-width="0.5" stroke-dasharray="4,4"/>
   <text x="593.3" y="436" fill="rgba(138,138,154,0.35)" font-size="9" text-anchor="middle" font-family="'SF Mono', 'Fira Code', monospace">rated</text>
 
-  <!-- Ambiguity annotation bracket (in the gap region ~9-10 m/s) -->
-  <line x1="425" y1="169" x2="425" y2="194" stroke="rgba(255,51,102,0.4)" stroke-width="0.5"/>
-  <line x1="425" y1="181" x2="440" y2="181" stroke="rgba(255,51,102,0.4)" stroke-width="0.5"/>
-  <text x="444" y="178" fill="rgba(255,51,102,0.7)" font-size="9.5" font-family="'SF Mono', 'Fira Code', monospace">Δ loss</text>
-  <text x="444" y="192" fill="rgba(255,51,102,0.45)" font-size="8" font-family="'SF Mono', 'Fira Code', monospace">cause unknown</text>
-
-  <!-- Question mark annotation -->
-  <g transform="translate(385, 215)">
-    <circle cx="0" cy="0" r="12" fill="none" stroke="rgba(255,51,102,0.25)" stroke-width="1" stroke-dasharray="3,2"/>
-    <text x="0" y="4" fill="rgba(255,51,102,0.6)" font-size="14" font-weight="600" text-anchor="middle" font-family="'Space Grotesk', sans-serif">?</text>
-  </g>
-
   <!-- Legend -->
   <g transform="translate(110, 55)">
-    <line x1="0" y1="0" x2="24" y2="0" stroke="#00d4ff" stroke-width="2" opacity="0.3"/>
+    <line x1="0" y1="0" x2="24" y2="0" stroke="#00d4ff" stroke-width="2"/>
     <text x="30" y="4" fill="rgba(240,240,245,0.7)" font-size="10">Expected (reference)</text>
-    <line x1="0" y1="18" x2="24" y2="18" stroke="#00d4ff" stroke-width="2"/>
+    <line x1="0" y1="18" x2="24" y2="18" stroke="#ff3366" stroke-width="2" stroke-dasharray="8,4"/>
     <text x="30" y="22" fill="rgba(240,240,245,0.7)" font-size="10">Measured (SCADA)</text>
   </g>
 
@@ -197,8 +162,4 @@
     <text x="0" y="12" fill="rgba(138,138,154,0.4)" font-size="8.5" font-family="'SF Mono', 'Fira Code', monospace">at rated power</text>
   </g>
 
-  <!-- Sub-rated annotation -->
-  <g transform="translate(280, 340)">
-    <text x="0" y="0" fill="rgba(255,51,102,0.35)" font-size="8" font-family="'SF Mono', 'Fira Code', monospace" letter-spacing="0.06em">UNDERPERFORMANCE REGION</text>
-  </g>
 </svg>
