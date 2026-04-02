@@ -1,0 +1,203 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" font-family="'Inter', 'SF Mono', sans-serif">
+  <defs>
+    <linearGradient id="gridFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#00d4ff" stop-opacity="0.02"/>
+    </linearGradient>
+    <linearGradient id="refGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00d4ff"/>
+      <stop offset="100%" stop-color="#00d4ff"/>
+    </linearGradient>
+    <linearGradient id="measGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ff3366"/>
+      <stop offset="100%" stop-color="#ff3366"/>
+    </linearGradient>
+    <linearGradient id="ambiguityFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff3366" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#ff3366" stop-opacity="0.03"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="480" fill="#0a0a0f" rx="4"/>
+
+  <!-- Chart area: x=80..740, y=40..400 -->
+  <!-- Wind speed 0-18 => x: 80 + (ws/18)*660 -->
+  <!-- Power 0-3200 => y: 400 - (p/3200)*360 -->
+
+  <!-- Minimal grid lines -->
+  <g stroke="rgba(138,138,154,0.12)" stroke-width="0.5">
+    <!-- Horizontal grid: 0, 500, 1000, 1500, 2000, 2500, 3000 kW -->
+    <line x1="80" y1="400" x2="740" y2="400"/>
+    <line x1="80" y1="343.75" x2="740" y2="343.75"/>
+    <line x1="80" y1="287.5" x2="740" y2="287.5"/>
+    <line x1="80" y1="231.25" x2="740" y2="231.25"/>
+    <line x1="80" y1="175" x2="740" y2="175"/>
+    <line x1="80" y1="118.75" x2="740" y2="118.75"/>
+    <line x1="80" y1="62.5" x2="740" y2="62.5"/>
+    <!-- Vertical grid: every 2 m/s -->
+    <line x1="153.3" y1="40" x2="153.3" y2="400"/>
+    <line x1="226.7" y1="40" x2="226.7" y2="400"/>
+    <line x1="300" y1="40" x2="300" y2="400"/>
+    <line x1="373.3" y1="40" x2="373.3" y2="400"/>
+    <line x1="446.7" y1="40" x2="446.7" y2="400"/>
+    <line x1="520" y1="40" x2="520" y2="400"/>
+    <line x1="593.3" y1="40" x2="593.3" y2="400"/>
+    <line x1="666.7" y1="40" x2="666.7" y2="400"/>
+    <line x1="740" y1="40" x2="740" y2="400"/>
+  </g>
+
+  <!-- Axes -->
+  <line x1="80" y1="40" x2="80" y2="400" stroke="rgba(138,138,154,0.3)" stroke-width="1"/>
+  <line x1="80" y1="400" x2="740" y2="400" stroke="rgba(138,138,154,0.3)" stroke-width="1"/>
+
+  <!-- Y-axis labels (Power kW) -->
+  <g fill="rgba(138,138,154,0.6)" font-size="10" text-anchor="end">
+    <text x="72" y="403">0</text>
+    <text x="72" y="346.75">500</text>
+    <text x="72" y="290.5">1000</text>
+    <text x="72" y="234.25">1500</text>
+    <text x="72" y="178">2000</text>
+    <text x="72" y="121.75">2500</text>
+    <text x="72" y="65.5">3000</text>
+  </g>
+
+  <!-- X-axis labels (Wind Speed m/s) -->
+  <g fill="rgba(138,138,154,0.6)" font-size="10" text-anchor="middle">
+    <text x="80" y="418">0</text>
+    <text x="153.3" y="418">2</text>
+    <text x="226.7" y="418">4</text>
+    <text x="300" y="418">6</text>
+    <text x="373.3" y="418">8</text>
+    <text x="446.7" y="418">10</text>
+    <text x="520" y="418">12</text>
+    <text x="593.3" y="418">14</text>
+    <text x="666.7" y="418">16</text>
+    <text x="740" y="418">18</text>
+  </g>
+
+  <!-- Axis titles -->
+  <text x="410" y="445" fill="rgba(138,138,154,0.5)" font-size="11" text-anchor="middle" letter-spacing="0.05em">WIND SPEED (m/s)</text>
+  <text x="20" y="220" fill="rgba(138,138,154,0.5)" font-size="11" text-anchor="middle" letter-spacing="0.05em" transform="rotate(-90,20,220)">POWER (kW)</text>
+
+  <!-- Underperformance shaded area between curves (4-13 m/s region) -->
+  <!-- Reference points: (4,50)(5,150)(6,400)(7,800)(8,1300)(9,1850)(10,2350)(11,2700)(12,2900)(13,2970) -->
+  <!-- Measured ~95%: (4,47)(5,142)(6,376)(7,752)(8,1222)(9,1739)(10,2209)(11,2565)(12,2784)(13,2881) -->
+  <!-- x = 80 + (ws/18)*660, y = 400 - (p/3200)*360 -->
+  <path d="M226.7,394.4 C245,391 260,383 280,355 C300,310 320,260 336.7,230
+           C355,190 373.3,153.8 395,104 C415,55 435,45 446.7,63.3
+           C460,52 475,53 483.3,56.6 C500,57 512,55 520,54.1
+           L520,57.5 C512,58 500,60 483.3,59.4
+           C475,56 460,56 446.7,66.6
+           C435,50 415,60 395,113.8
+           C375,160 355,200 336.7,240
+           C320,270 300,320 280,365
+           C260,390 245,396 226.7,398.3 Z"
+        fill="url(#ambiguityFill)" opacity="0.8"/>
+
+  <!-- Reference Curve (Expected) - Vestas V90-3.0 MW -->
+  <!-- Anchor points converted to SVG coordinates:
+       (0,0) => (80, 400)
+       (3,0) => (190, 400)
+       (4,50) => (226.7, 394.4)
+       (5,150) => (263.3, 383.1)
+       (6,400) => (300, 355)
+       (7,800) => (336.7, 310)
+       (8,1300) => (373.3, 253.8)
+       (9,1850) => (410, 191.9)
+       (10,2350) => (446.7, 135.6)
+       (11,2700) => (483.3, 96.3)
+       (12,2900) => (520, 73.8)
+       (13,2970) => (556.7, 65.9)
+       (14,3000) => (593.3, 62.5)
+       (15,3000) => (630, 62.5)
+       (16,3000) => (666.7, 62.5)
+       (17,3000) => (703.3, 62.5)
+       (18,3000) => (740, 62.5)
+  -->
+  <path d="M80,400 L190,400
+           C210,400 220,398 226.7,394.4
+           C240,388 252,385 263.3,383.1
+           C275,375 288,365 300,355
+           C312,340 325,325 336.7,310
+           C350,285 362,265 373.3,253.8
+           C387,230 398,210 410,191.9
+           C425,165 436,148 446.7,135.6
+           C460,118 472,105 483.3,96.3
+           C498,83 510,76 520,73.8
+           C535,68 548,66 556.7,65.9
+           C570,63 582,62.5 593.3,62.5
+           L740,62.5"
+        fill="none" stroke="url(#refGrad)" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Measured Curve (Underperformance ~94-97% of reference in sub-rated) -->
+  <!-- Measured points:
+       (0,0) => (80, 400)
+       (3,0) => (190, 400)
+       (4,47) => (226.7, 394.7)  [94%]
+       (5,141) => (263.3, 384.1)  [94%]
+       (6,376) => (300, 357.7)  [94%]
+       (7,752) => (336.7, 315.4)  [94%]
+       (8,1235) => (373.3, 261.1)  [95%]
+       (9,1758) => (410, 202.3)  [95%]
+       (10,2233) => (446.7, 148.8)  [95%]
+       (11,2592) => (483.3, 108.5)  [96%]
+       (12,2813) => (520, 83.5)  [97%]
+       (13,2911) => (556.7, 72.5)  [98%]
+       (14,3000) => (593.3, 62.5)  [100%]
+       (15-18,3000) => plateau at 62.5
+  -->
+  <path d="M80,400 L190,400
+           C210,400 220,398 226.7,394.7
+           C240,389 252,386 263.3,384.1
+           C275,378 288,368 300,357.7
+           C312,344 325,330 336.7,315.4
+           C350,292 362,272 373.3,261.1
+           C387,238 398,218 410,202.3
+           C425,175 436,158 446.7,148.8
+           C460,130 472,116 483.3,108.5
+           C498,94 510,86 520,83.5
+           C535,77 548,73 556.7,72.5
+           C570,67 582,63.5 593.3,62.5
+           L740,62.5"
+        fill="none" stroke="url(#measGrad)" stroke-width="2" stroke-linecap="round" stroke-dasharray="8,4"/>
+
+  <!-- Rated power line -->
+  <line x1="80" y1="62.5" x2="740" y2="62.5" stroke="rgba(138,138,154,0.15)" stroke-width="0.5" stroke-dasharray="4,4"/>
+  <text x="744" y="58" fill="rgba(138,138,154,0.4)" font-size="9" font-family="'SF Mono', 'Fira Code', monospace">3000 kW</text>
+
+  <!-- Rated wind speed vertical indicator -->
+  <line x1="593.3" y1="40" x2="593.3" y2="400" stroke="rgba(138,138,154,0.1)" stroke-width="0.5" stroke-dasharray="4,4"/>
+  <text x="593.3" y="436" fill="rgba(138,138,154,0.35)" font-size="9" text-anchor="middle" font-family="'SF Mono', 'Fira Code', monospace">rated</text>
+
+  <!-- Ambiguity annotation bracket (in the gap region ~7-11 m/s) -->
+  <line x1="350" y1="280" x2="350" y2="310" stroke="rgba(255,51,102,0.4)" stroke-width="0.5"/>
+  <line x1="350" y1="295" x2="368" y2="295" stroke="rgba(255,51,102,0.4)" stroke-width="0.5"/>
+  <text x="372" y="292" fill="rgba(255,51,102,0.7)" font-size="9.5" font-family="'SF Mono', 'Fira Code', monospace">Δ loss</text>
+  <text x="372" y="306" fill="rgba(255,51,102,0.45)" font-size="8" font-family="'SF Mono', 'Fira Code', monospace">cause unknown</text>
+
+  <!-- Question mark annotation -->
+  <g transform="translate(430, 175)">
+    <circle cx="0" cy="0" r="14" fill="none" stroke="rgba(255,51,102,0.25)" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="0" y="5" fill="rgba(255,51,102,0.6)" font-size="16" font-weight="600" text-anchor="middle" font-family="'Space Grotesk', sans-serif">?</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(110, 55)">
+    <line x1="0" y1="0" x2="24" y2="0" stroke="#00d4ff" stroke-width="2"/>
+    <text x="30" y="4" fill="rgba(240,240,245,0.7)" font-size="10">Expected (reference)</text>
+    <line x1="0" y1="18" x2="24" y2="18" stroke="#ff3366" stroke-width="2" stroke-dasharray="8,4"/>
+    <text x="30" y="22" fill="rgba(240,240,245,0.7)" font-size="10">Measured (SCADA)</text>
+  </g>
+
+  <!-- Convergence annotation at plateau -->
+  <g transform="translate(640, 50)">
+    <text x="0" y="0" fill="rgba(138,138,154,0.4)" font-size="8.5" font-family="'SF Mono', 'Fira Code', monospace">curves converge</text>
+    <text x="0" y="12" fill="rgba(138,138,154,0.4)" font-size="8.5" font-family="'SF Mono', 'Fira Code', monospace">at rated power</text>
+  </g>
+
+  <!-- Sub-rated annotation -->
+  <g transform="translate(280, 340)">
+    <text x="0" y="0" fill="rgba(255,51,102,0.35)" font-size="8" font-family="'SF Mono', 'Fira Code', monospace" letter-spacing="0.06em">UNDERPERFORMANCE REGION</text>
+  </g>
+</svg>
