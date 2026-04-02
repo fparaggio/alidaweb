@@ -1061,7 +1061,7 @@ h3 { font-size: clamp(1.125rem, 2vw, 1.5rem); }
   border-radius: 50%;
   background: rgba(0, 212, 255, 0.04);
   line-height: 1;
-  margin-top: 0.15rem;
+  margin-top: var(--space-xs);
 }
 
 .uc-step__content {
