@@ -9,7 +9,7 @@
   --bg-alt:        #111118;
   --bg-card:       #161620;
   --text:          #f0f0f5;
-  --text-secondary:#8a8a9a;
+  --text-secondary:#b0b0c4;
   --accent:        #00d4ff;
   --accent-hover:  #00b8e0;
   --danger:        #ff3366;
@@ -252,6 +252,16 @@ h3 { font-size: clamp(1.125rem, 2vw, 1.5rem); }
 
 .nav__logo:hover .nav__logo-img {
   opacity: 0.8;
+}
+
+.nav__acronym {
+  font-size: 0.65rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin-left: 0.5rem;
+  white-space: nowrap;
 }
 
 .nav__links {
