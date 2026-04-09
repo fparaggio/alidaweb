@@ -1602,9 +1602,294 @@ h3 { font-size: clamp(1.125rem, 2vw, 1.5rem); }
 }
 
 /* ============================================
+   HERO EYEBROW
+   ============================================ */
+.hero__eyebrow {
+  margin-bottom: var(--space-md);
+}
+
+.hero__eyebrow-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.4rem 1.1rem;
+  border: 1px solid rgba(0, 212, 255, 0.35);
+  border-radius: 999px;
+  background: rgba(0, 212, 255, 0.07);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* ============================================
+   COMPETITIVE DIFFERENTIATION TABLE
+   ============================================ */
+.diff-table-wrap {
+  overflow-x: auto;
+  margin-bottom: var(--space-lg);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(0, 212, 255, 0.1);
+  background: var(--bg-card);
+}
+
+.diff-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 560px;
+}
+
+.diff-table thead tr {
+  border-bottom: 1px solid rgba(0, 212, 255, 0.12);
+}
+
+.diff-table th {
+  padding: 1rem 1.25rem;
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.diff-table__feature {
+  text-align: left !important;
+  font-family: var(--font-body) !important;
+  text-transform: none !important;
+  font-size: 0.9375rem !important;
+  font-weight: 500 !important;
+  color: var(--text) !important;
+  letter-spacing: 0 !important;
+  width: 35%;
+}
+
+.diff-table__col--alida {
+  background: rgba(0, 212, 255, 0.04);
+  border-left: 2px solid rgba(0, 212, 255, 0.25);
+  border-right: 2px solid rgba(0, 212, 255, 0.25);
+}
+
+.diff-table__brand {
+  color: var(--accent);
+  font-size: 0.9375rem !important;
+  text-transform: none !important;
+  letter-spacing: 0.05em !important;
+}
+
+.diff-table tbody tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  transition: background var(--transition);
+}
+
+.diff-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.diff-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.diff-table td {
+  padding: 0.875rem 1.25rem;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.diff-table td.diff-table__feature {
+  text-align: left;
+}
+
+.diff-table__val--yes,
+.diff-table__val--partial,
+.diff-table__val--no {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.diff-table__val--yes svg,
+.diff-table__val--partial svg,
+.diff-table__val--no svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* ALIDA column cells */
+.diff-table__col--alida .diff-table__val--yes,
+.diff-table__col--alida .diff-table__val--partial,
+.diff-table__col--alida .diff-table__val--no {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.diff-table__legend {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  flex-wrap: wrap;
+}
+
+.diff-legend__item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+}
+
+.diff-legend__item svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.diff-legend__item--yes { color: #00ff88; }
+.diff-legend__item--partial { color: #f0a020; }
+.diff-legend__item--no { color: #ff3366; }
+
+/* ============================================
+   IP / PROPRIETARY TECH CARDS
+   ============================================ */
+.ip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.ip-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 212, 255, 0.12);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  transition: all var(--transition);
+  overflow: hidden;
+}
+
+.ip-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), rgba(0, 212, 255, 0.2), transparent);
+}
+
+.ip-card:hover {
+  border-color: rgba(0, 212, 255, 0.28);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35), 0 0 20px rgba(0, 212, 255, 0.06);
+}
+
+.ip-card__badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid rgba(0, 212, 255, 0.25);
+  border-radius: 3px;
+  background: rgba(0, 212, 255, 0.06);
+  margin-bottom: var(--space-sm);
+}
+
+.ip-card__icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: var(--space-sm);
+}
+
+.ip-card__icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.ip-card__title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.ip-card__text {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ============================================
+   METRIC STAT CARDS
+   ============================================ */
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.metric-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-md);
+  text-align: center;
+  transition: all var(--transition);
+}
+
+.metric-card--accent {
+  border-color: rgba(0, 212, 255, 0.2);
+  background: rgba(0, 212, 255, 0.03);
+}
+
+.metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.metric-card__value {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.03em;
+}
+
+.metric-card__unit {
+  font-size: 0.45em;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+  vertical-align: middle;
+  margin-left: 0.1em;
+}
+
+.metric-card__label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ============================================
    ANIMATIONS
    ============================================ */
-.fade-in {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.7s ease, transform 0.7s ease;
